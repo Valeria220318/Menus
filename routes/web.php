@@ -1,16 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
-Route::get('/', function () {
-    return view('pages.home');
-})->name('home');
+Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/income', [PageController::class, 'income'])->name('income');
+Route::get('/bills', [PageController::class, 'bills'])->name('bills');
 
-Route::get('/income', function () {
-    return view('pages.income');
-})->name('income');
-
-Route::get('/bills', function () {
-    return view('pages.bills');
-})->name('bills');
 
